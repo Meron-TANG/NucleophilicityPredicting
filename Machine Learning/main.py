@@ -14,9 +14,9 @@ from scipy.stats import pearsonr
 warnings.filterwarnings('ignore')
 random_seed = 1
 
-file_name = 'D:/Dataset/统一smile亲核试剂1072版本.csv'
+db_file_path = 'D:/Dataset/1072.csv'
 save_path = 'D:/Dataset'
-data = data_visualization.read_data(file_name,random_seed=random_seed,Shuffle=True)
+data = data_visualization.read_data(db_file_path,random_seed=random_seed,Shuffle=True)
 
 
 # 数据可视化
@@ -26,29 +26,6 @@ data = data_visualization.read_data(file_name,random_seed=random_seed,Shuffle=Tr
 # N_hist = data_visualization.hist_N(data,'N',save_path)
 # nucleo_num = data_visualization.nucleo_num(data,'Type',save_path)
 # nucleo_average_N = data_visualization.nucleo_meanN(data,'Type','N',save_path)
-
-
-
-# 分割数据集
-# df = pd.read_csv('D:/Dataset/8-2分割过的1100亲核数据.csv',encoding='gbk')
-# df = df.dropna()
-# df['split'] = df['train_test_split'].map(split_map)
-#
-train = pd.read_csv('D:/Dataset/N_train_1100-878_0.926_threshold=1_xgboost_1.csv',index_col='Sort')
-test = pd.read_csv('D:/Dataset/N_test_1100-223_0.926_threshold=1_xgboost_1.csv',index_col='Sort')
-# train['train_test_split'] = 'train'
-# test['train_test_split'] = 'test'
-# train['split'] = train['train_test_split'].map(split_map)
-# test['split'] = test['train_test_split'].map(split_map)
-#
-# dim_2_split_tsne = split_tsne(df,'SMILES','split',save_path=save_path,three_dim=True,save=True)
-# dim_3_split_tsne = split_tsne(df,'SMILES','split',save_path=save_path,three_dim=True,save=True)
-# split_N_distribution = split_N_distribution(train,test,save_path=save_path,save=True)
-
-# X_special_train,y_special_train = special_data(train,'train','fp_mac')
-# X_special_test,y_special_test = special_data(train,'test','fp_mac')
-#
-
 
 
 # 加载数据
